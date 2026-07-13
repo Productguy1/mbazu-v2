@@ -59,7 +59,7 @@ function App() {
         </p>
 
         <p className="text-sm mb-6 leading-[1.55]">
-          Before that, I was the founding designer at <TextLink href="https://join.tapro.com/">tapro</TextLink>, mostly focused on product with some brand work mixed in. And before Tapro, I was the first designer at <TextLink href="https://invertase.io/">Invertase</TextLink>, building tooling for developers.
+          Before that, I was the founding designer at <TextLink href="https://join.tapro.com/">Tapro</TextLink>, mostly focused on product with some brand work mixed in. And before Tapro, I was the first designer at <TextLink href="https://invertase.io/">Invertase</TextLink>, building tooling for developers.
         </p>
 
         <p className="text-sm mb-6 leading-[1.55]">
