@@ -7,7 +7,7 @@ function TextLink({ href, children }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-[#707070] underline decoration-[#AEAEAE] underline-offset-[2px] transition-colors duration-150 hover:text-[#111]"
+      className="text-[#707070] underline decoration-[#AEAEAE] underline-offset-[2px] transition-colors duration-200 hover:text-[#111]"
     >
       {children}
     </a>
@@ -71,7 +71,7 @@ function App() {
         </p>
 
         <p className="text-sm mb-6 leading-[1.55]">
-          You can find me on <TextLink href="https://x.com/TheProductGuy__">X</TextLink> or <TextLink href="https://www.linkedin.com/in/daniel-mbazu-103714197/">Linkedin</TextLink>, also feel free to drop me a line at <a className="text-[#707070] underline decoration-[#AEAEAE] underline-offset-[2px] transition-colors duration-150 hover:text-[#111]" href="mailto:danielmbazu9@gmail.com" target="_blank">hey@mbazu.com</a>.
+          You can find me on <TextLink href="https://x.com/TheProductGuy__">X</TextLink> or <TextLink href="https://www.linkedin.com/in/daniel-mbazu-103714197/">Linkedin</TextLink>, also feel free to drop me a line at <a className="text-[#707070] underline decoration-[#AEAEAE] underline-offset-[2px] transition-colors duration-200 hover:text-[#111]" href="mailto:danielmbazu9@gmail.com" target="_blank">hey@mbazu.com</a>.
         </p>
       </section>
       <section className="w-full py-4">
