@@ -1,25 +1,5 @@
 import { posts } from "./data"
-import { useEffect, useState } from "react"
-
-function Clock() {
-  const [now, setNow] = useState(new Date())
-
-  useEffect(() => {
-    const id = setInterval(() => { setNow(new Date()) }, 1000)
-    return () => clearInterval(id)
-  }, [])
-
-  return <span>
-    {now.toLocaleTimeString("en-GB", {
-      timeZone: "Europe/London",
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true
-    })
-      .replace(" ", "")
-    }
-  </span>
-}
+import Clock from "./Clock"
 
 function TextLink({ href, children }) {
   return (
@@ -63,8 +43,8 @@ function App() {
     <main className="flex flex-col max-w-2xl items-start justify-center m-auto pt-28 pb-16 px-6">
       <header className="mb-9">
         <div>
-          <h1 className="text-[15px] mb-1">Daniel Mbazu</h1>
-          <p className="text-sm text-[#858585]">
+          <h1 className="text-[15px] font-[450] mb-1">Daniel Mbazu</h1>
+          <p className="text-sm font-normal text-[#858585]">
             <Clock /> <span>in London, UK</span>
           </p>
         </div>
