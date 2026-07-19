@@ -1,6 +1,8 @@
 import { posts } from "./data"
 import Clock from "./Clock"
 
+
+
 function TextLink({ href, children }) {
   return (
     <a
@@ -18,7 +20,10 @@ function App() {
 
   const postEls = posts.map(post => {
     return (
-      <li key={post.id} className="group py-4.5 border-t-[0.5px] w-full border-[#e0e0e0]">
+      <li
+        key={post.id}
+        className="group py-4.5 border-t-[0.5px] w-full border-[#e0e0e0]"
+      >
         {post.published ? (
           <a href={post.href}>
             <p className="text-sm pb-1.5">{post.title}</p>
@@ -40,12 +45,16 @@ function App() {
   })
 
   return (
-    <main className="flex flex-col max-w-2xl items-start justify-center m-auto pt-28 pb-16 px-6">
+    <main className="flex flex-col max-w-2xl items-start justify-center m-auto pt-24 pb-16 px-6">
       <header className="mb-9">
         <div>
-          <h1 className="text-[15px] font-[450] mb-1">Daniel Mbazu</h1>
+          <h1
+            className="text-[15px] font-[450] mb-1"
+          >
+            Daniel Mbazu
+          </h1>
           <p className="text-sm font-normal text-[#858585]">
-            <Clock /> <span>in London, UK</span>
+            <Clock /> in London, UK
           </p>
         </div>
       </header>
