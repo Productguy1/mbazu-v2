@@ -1,9 +1,14 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import avatar from "./assets/hover-avatar.png"
 
 function XLink() {
     const [hovered, setHovered] = useState(false)
+
+    useEffect(() => {
+        const img = new Image()
+        img.src = avatar   // browser fetches + caches it now, no DOM element
+    }, [])
 
     return (
         <span
@@ -43,7 +48,7 @@ function XLink() {
                     >
                         <div className="w-72 rounded-xl bg-white p-4 shadow-card">
                             <div className="flex items-center gap-2.5">
-                                <img src={avatar} className="h-11 w-11 rounded-full object-cover shrink-0" />
+                                <img src={avatar} alt="Daniel's-profile" className=" h-11 w-11 rounded-full object-cover shrink-0" />
 
                                 <div className="min-w-0">
                                     <p className="text-sm flex items-center gap-1 font-medium text-[#101010]">
