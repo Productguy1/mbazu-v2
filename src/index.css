@@ -5,6 +5,11 @@
   --text: #101010;
 }
 
+@theme {
+  --shadow-card: 0 3px 3px -1.5px rgba(51, 51, 51, 0.10), 0 2px 2px -1px rgba(51, 51, 51, 0.10), 0 1px 1px -0.5px rgba(51, 51, 51, 0.10), 0 0 0 0.6px rgba(51, 51, 51, 0.10);
+}
+
+
 body {
   background-color: var(--bg);
   color: #101010;
