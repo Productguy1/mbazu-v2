@@ -1,6 +1,8 @@
 import { posts } from "./data"
 import Clock from "./Clock"
 import XLink from "./XLink"
+import CopyEmail from "./CopyLink"
+import FootballLink from "./FootballLink"
 
 
 
@@ -77,11 +79,11 @@ function App() {
         </p>
 
         <p className="text-sm mb-6 leading-[1.55]">
-          When I'm not working, I'm probably watching <TextLink href="https://en.wikipedia.org/wiki/Premier_League">football</TextLink> and picking apart the tactics, or planning the next trip somewhere I haven't been yet.
+          When I'm not working, I'm probably watching <FootballLink /> and picking apart the tactics, or planning the next trip somewhere I haven't been yet.
         </p>
 
         <p className="text-sm mb-6 leading-[1.55]">
-          You can find me on <XLink /> or <TextLink href="https://www.linkedin.com/in/daniel-mbazu-103714197/">Linkedin</TextLink>, also feel free to drop me a line at <a className="text-[#707070] underline decoration-[#AEAEAE] underline-offset-[2px] transition-colors duration-200 hover:text-[#111]" href="mailto:danielmbazu9@gmail.com" target="_blank">hey@mbazu.com</a>.
+          You can find me on <XLink /> or feel free to drop me a line at <CopyEmail />.
         </p>
       </section>
       <section className="w-full py-4">
