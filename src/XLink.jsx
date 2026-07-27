@@ -1,13 +1,9 @@
-import { useEffect } from "react"
 import HoverComp from "./HoverComp"
 import avatar from "./assets/hover-avatar.png"
+import { usePreloadImage } from "./usePreloadImage"
 
 function XLink() {
-
-    useEffect(() => {
-        const img = new Image()
-        img.src = avatar   // browser fetches + caches it now
-    }, [])
+    usePreloadImage(avatar)
 
     return (
         <HoverComp trigger={
@@ -29,15 +25,8 @@ function XLink() {
                             Dan
                             <span className="text-[#1d9bf0]" aria-label="Verified">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 12 12" fill="none">
-                                    <g clip-path="url(#clip0_12880_3840)">
-                                        <path d="M4.02899 1.39967C4.72447 -0.318735 7.15007 -0.339941 7.87544 1.36608C9.58239 0.642812 11.3124 2.34291 10.619 4.06223C12.3374 4.75771 12.3586 7.18331 10.6526 7.90868C11.3759 9.61563 9.67578 11.3456 7.95645 10.6523C7.26098 12.3707 4.83538 12.3919 4.11 10.6858C2.40319 11.4091 0.673065 9.70901 1.36656 7.98969C-0.351971 7.29408 -0.373177 4.86861 1.33298 4.14324C0.609576 2.43629 2.30967 0.706169 4.02899 1.39967Z" fill="#0096F1" />
-                                        <path d="M5.28959 8.46826L3.14258 6.3568L3.88152 5.60469L5.24217 6.94295L7.91606 3.96216L8.70111 4.66685L5.28959 8.46826Z" fill="white" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_12880_3840">
-                                            <rect width="12" height="12" fill="white" />
-                                        </clipPath>
-                                    </defs>
+                                    <path d="M4.02899 1.39967C4.72447 -0.318735 7.15007 -0.339941 7.87544 1.36608C9.58239 0.642812 11.3124 2.34291 10.619 4.06223C12.3374 4.75771 12.3586 7.18331 10.6526 7.90868C11.3759 9.61563 9.67578 11.3456 7.95645 10.6523C7.26098 12.3707 4.83538 12.3919 4.11 10.6858C2.40319 11.4091 0.673065 9.70901 1.36656 7.98969C-0.351971 7.29408 -0.373177 4.86861 1.33298 4.14324C0.609576 2.43629 2.30967 0.706169 4.02899 1.39967Z" fill="#0096F1" />
+                                    <path d="M5.28959 8.46826L3.14258 6.3568L3.88152 5.60469L5.24217 6.94295L7.91606 3.96216L8.70111 4.66685L5.28959 8.46826Z" fill="white" />
                                 </svg>
                             </span>
                         </p>

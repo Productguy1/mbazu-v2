@@ -1,15 +1,9 @@
-import { useEffect } from "react"
 import HoverComp from "./HoverComp"
 import trophy from "./assets/arsenal-champions.png"
+import { usePreloadImage } from "./usePreloadImage"
 
 export default function FootballLink() {
-
-    // preload the image so it's cached before the first hover
-    useEffect(() => {
-        const img = new Image()
-        img.src = trophy
-    }, [])
-
+    usePreloadImage(trophy)
     return (
         <HoverComp trigger={
             <a
