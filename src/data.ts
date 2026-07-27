@@ -1,4 +1,12 @@
-export const posts = [
+type Post = {
+    id: number
+    title: string
+    blurb: string
+    href: string | null
+    published: boolean
+}
+
+export const posts: Post[] = [
     {
         id: 1,
         title: "Agent maxing",

@@ -1,7 +1,7 @@
-// usePreloadImage.js
+// usePreloadImage.ts
 import { useEffect } from "react"
 
-export function usePreloadImage(src) {
+export function usePreloadImage(src: string) {
     useEffect(() => {
         const img = new Image()
         img.src = src
