@@ -3,10 +3,16 @@ import Clock from "./Clock"
 import XLink from "./XLink"
 import CopyEmail from "./CopyLink"
 import FootballLink from "./FootballLink"
+import type { ReactNode } from "react"
 
 
+type TextLinkProps = {
+  href: string
+  children: ReactNode
+}
 
-function TextLink({ href, children }) {
+
+function TextLink({ href, children }: TextLinkProps) {
   return (
     <a
       href={href}
@@ -28,7 +34,7 @@ function App() {
         className="group py-4.5 border-t-[0.5px] w-full border-[#e0e0e0]"
       >
         {post.published ? (
-          <a href={post.href}>
+          <a href={post.href ?? undefined}>
             <p className="text-sm pb-1.5">{post.title}</p>
             <p className="text-sm text-[#707070]">{post.blurb}</p>
           </a>
