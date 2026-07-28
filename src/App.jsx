@@ -29,7 +29,7 @@ function App() {
       >
         {post.published ? (
           <a href={post.href}>
-            <p className="text-sm pb-1.5">{post.titttle}</p>
+            <p className="text-sm pb-1.5">{post.title}</p>
             <p className="text-sm text-[#707070]">{post.blurb}</p>
           </a>
         ) : (

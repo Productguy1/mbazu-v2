@@ -1,7 +1,13 @@
 import { useState } from "react"
+import type { ReactNode } from "react"
 import { motion, AnimatePresence } from "motion/react"
 
-export default function HoverComp({ trigger, children }) {
+type HoverCompProps = {
+    trigger: ReactNode
+    children: ReactNode
+}
+
+export default function HoverComp({ trigger, children }: HoverCompProps) {
     const [hovered, setHovered] = useState(false)
 
     return (

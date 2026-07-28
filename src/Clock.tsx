@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence, useReducedMotion } from "motion/react"
 
-function Digit({ char }) {
+type DigitProps = {
+    char: string
+}
+function Digit({ char }: DigitProps) {
     const reduce = useReducedMotion()
     return (
         <span
@@ -39,7 +42,7 @@ export default function Clock() {
         hour12: true,
     }).formatToParts(now)
 
-    const getPart = (type) => parts.find((p) => p.type === type)?.value ?? ""
+    const getPart = (type: string) => parts.find((p) => p.type === type)?.value ?? ""
 
     const hour = getPart("hour")
     const minute = getPart("minute")
