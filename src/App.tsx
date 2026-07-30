@@ -4,6 +4,7 @@ import XLink from "./XLink"
 import CopyEmail from "./CopyLink"
 import FootballLink from "./FootballLink"
 import type { ReactNode } from "react"
+import VisitorLocation from "./VisitorsLocation"
 
 
 type TextLinkProps = {
@@ -54,7 +55,7 @@ function App() {
   })
 
   return (
-    <main className="flex flex-col max-w-2xl items-start justify-center m-auto pt-24 pb-16 px-6">
+    <main className="flex flex-col max-w-2xl items-start justify-center m-auto pt-24 pb-14 px-6">
       <header className="mb-9">
         <div>
           <h1
@@ -98,6 +99,9 @@ function App() {
           {postEls}
         </ul>
       </section>
+      <p className="text-sm mb-6 leading-[1.55] mt-5 text-[#707070]">
+        Current visitor from <VisitorLocation />
+      </p>
     </main>
   )
 }
