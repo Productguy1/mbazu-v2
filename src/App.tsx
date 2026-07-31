@@ -1,109 +1,18 @@
-import { posts } from "./data"
-import Clock from "./Clock"
-import XLink from "./XLink"
-import CopyEmail from "./CopyLink"
-import FootballLink from "./FootballLink"
-import type { ReactNode } from "react"
-import VisitorLocation from "./VisitorsLocation"
+import { createBrowserRouter, RouterProvider } from "react-router"
+import Home from "./Home"
+import RingsInShadows from "./RingsInShadows"
+import FluidityIsKing from "./FludityIsKing"
+import AgentMaxing from "./AgentMaxing"
+import ToolsDontMatter from "./ToolsDontMatter"
 
+const router = createBrowserRouter([
+  { path: "/", element: <Home /> },
+  { path: "/rings-in-shadows", element: <RingsInShadows /> },
+  { path: "/fluidity-is-king", element: <FluidityIsKing /> },
+  { path: "/agent-maxing", element: <AgentMaxing /> },
+  { path: "/tools-dont-matter", element: <ToolsDontMatter /> },
+])
 
-type TextLinkProps = {
-  href: string
-  children: ReactNode
+export default function App() {
+  return <RouterProvider router={router} />
 }
-
-
-function TextLink({ href, children }: TextLinkProps) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[#707070] underline decoration-[#AEAEAE] underline-offset-[2px] transition-colors duration-200 hover:text-[#111]"
-    >
-      {children}
-    </a>
-  )
-}
-
-function App() {
-
-  const postEls = posts.map(post => {
-    return (
-      <li
-        key={post.id}
-        className="group py-4.5 border-t-[0.5px] w-full border-[#e0e0e0]"
-      >
-        {post.published ? (
-          <a href={post.href ?? undefined}>
-            <p className="text-sm pb-1.5">{post.title}</p>
-            <p className="text-sm text-[#707070]">{post.blurb}</p>
-          </a>
-        ) : (
-          <div>
-            <p className="text-sm pb-1.5">
-              {post.title}
-              <span className="text-xs border-[0.55px] border-[#DBDBDB] text-[#666666] rounded-full px-1.5 py-0.5 ml-1 mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                coming soon
-              </span>
-            </p>
-            <p className="text-sm text-[#707070]">{post.blurb}</p>
-          </div>
-        )}
-      </li>
-    )
-  })
-
-  return (
-    <main className="flex flex-col max-w-2xl items-start justify-center m-auto pt-24 pb-14 px-6">
-      <header className="mb-9">
-        <div>
-          <h1
-            className="text-[15px] font-[450] mb-1"
-          >
-            Daniel Mbazu
-          </h1>
-          <p className="text-sm font-normal text-[#858585]">
-            <Clock /> in London, UK
-          </p>
-        </div>
-      </header>
-      <section>
-        <p className="text-sm mb-6 leading-[1.55]">
-          I'm a designer at heart, but I've always been drawn to the building side of things too.
-        </p>
-
-        <p className="text-sm mb-6 leading-[1.55]">
-          Right now I run <TextLink href="https://www.shapeslab.design/">Shapes Lab</TextLink>, an independent studio where I help founders figure out their brand and shape their products. On evenings I'm usually hacking on something small with friends, sometimes it ships, sometimes it doesn't.
-        </p>
-
-        <p className="text-sm mb-6 leading-[1.55]">
-          Before that, I was the founding designer at <TextLink href="https://join.tapro.com/">Tapro</TextLink>, mostly focused on product with some brand work mixed in. And before Tapro, I was the first designer at <TextLink href="https://invertase.io/">Invertase</TextLink>, building tooling for developers.
-        </p>
-
-        <p className="text-sm mb-6 leading-[1.55]">
-          I care about craft, though not in a precious way. I just notice when something feels slightly off, and I genuinely can't move on until it doesn't.
-        </p>
-
-        <p className="text-sm mb-6 leading-[1.55]">
-          When I'm not working, I'm probably watching <FootballLink /> and picking apart the tactics, or planning the next trip somewhere I haven't been yet.
-        </p>
-
-        <p className="text-sm mb-6 leading-[1.55]">
-          You can find me on <XLink /> or feel free to drop me a line at <CopyEmail />.
-        </p>
-      </section>
-      <section className="w-full py-4">
-        <h3 className="text-[15px] font-[420] mb-4 text-[#858585]">Writing</h3>
-        <ul className="border-b-[0.5px] w-full border-[#e0e0e0]">
-          {postEls}
-        </ul>
-      </section>
-      <p className="text-sm mb-6 leading-[1.55] mt-5 text-[#707070]">
-        Current visitor from <VisitorLocation />
-      </p>
-    </main>
-  )
-}
-
-export default App
