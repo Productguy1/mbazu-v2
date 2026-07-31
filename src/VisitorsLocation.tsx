@@ -1,9 +1,4 @@
-import { useState, useEffect } from "react"
-
-type Location = {
-    city: string
-    country: string
-}
+import type { Location } from "./types"
 
 function displayLocation(location: Location) {
     if (location.city && location.country) {
@@ -15,21 +10,12 @@ function displayLocation(location: Location) {
     return "somewhere on Earth"
 }
 
-export default function VisitorLocation() {
-    const [location, setLocation] = useState<Location | null>(null)
-    const [error, setError] = useState(false)
+type VisitorLocationProps = {
+    location: Location | null
+    error: boolean
+}
 
-    useEffect(() => {
-        fetch("https://ipwho.is/")
-            .then((res) => res.json())
-            .then((data) => {
-                setLocation({
-                    city: data.city || "",
-                    country: data.country || "",
-                })
-            })
-            .catch(() => setError(true))
-    }, [])
+export default function VisitorLocation({ location, error }: VisitorLocationProps) {
 
     if (error) return <span>somewhere on Earth</span>
     if (!location) return <span>…</span>   // loading

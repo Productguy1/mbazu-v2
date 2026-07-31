@@ -6,11 +6,19 @@ import FootballLink from "./FootballLink"
 import type { ReactNode } from "react"
 import VisitorLocation from "./VisitorsLocation"
 import { Link } from "react-router"
+import type { Location } from "./types"
 
 
 type TextLinkProps = {
     href: string
     children: ReactNode
+}
+
+
+
+type HomeProps = {
+    location: Location | null
+    error: boolean
 }
 
 
@@ -27,7 +35,7 @@ function TextLink({ href, children }: TextLinkProps) {
     )
 }
 
-export default function Home() {
+export default function Home({ location, error }: HomeProps) {
 
     const postEls = posts.map(post => {
         return (
@@ -101,7 +109,7 @@ export default function Home() {
                 </ul>
             </section>
             <p className="text-sm mb-6 leading-[1.55] mt-5 text-[#707070]">
-                Current visitor from <VisitorLocation />
+                Current visitor from <VisitorLocation location={location} error={error} />
             </p>
         </main>
     )

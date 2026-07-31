@@ -11,7 +11,7 @@ function Digit({ char }: DigitProps) {
             aria-hidden="true"
             className="relative inline-block overflow-hidden"
         >
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence mode="popLayout" initial={false}>
                 <motion.span
                     key={char}
                     initial={{ y: "100%" }}
