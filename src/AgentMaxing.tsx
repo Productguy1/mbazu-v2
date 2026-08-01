@@ -1,8 +1,225 @@
+import { Link } from "react-router"
+
 export default function AgentMaxing() {
     return (
-        <main className="flex flex-col max-w-2xl m-auto pt-24 pb-14 px-6">
-            <h1 className="text-[15px] font-[450] mb-6">Agent Maxing</h1>
-            <p className="text-sm leading-[1.55]">Essay coming soon…</p>
-        </main>
+        <>
+            <nav className="fixed top-24 left-32 z-10">
+                <Link
+                    to="/"
+                    className="flex items-center gap-1.5 text-sm text-[#707070] transition-colors duration-200 hover:text-[#111]"
+                >
+                    <svg
+                        width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" strokeWidth="2"
+                        strokeLinecap="round" strokeLinejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                    Index
+                </Link>
+            </nav>
+            <main className="flex flex-col max-w-2xl m-auto pt-24 pb-14 px-6">
+                {/* Article header */}
+                <header className="mb-9">
+                    <h1 className="text-[18px] font-[450] leading-[1.3] mb-2">
+                        Agent maxing: those who will survive the AI era are natural doers
+                    </h1>
+                    <p className="text-sm text-[#858585]">12th April 2026</p>
+                </header>
+
+                {/* Article body */}
+                <article className="w-full">
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        There's a quiet sorting happening right now, and most people
+                        haven't noticed it yet. They're too busy asking ChatGPT to write
+                        LinkedIn posts about how AI is changing everything.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        For two years, the conversation about AI has been stuck in the
+                        wrong frame. Will it take my job? Will it replace developers,
+                        writers, lawyers, designers? These are the wrong questions
+                        because they assume the dividing line runs between professions. It
+                        doesn't. It runs straight through them.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        The line is between people who do things and people who wait to be
+                        told what to do.
+                    </p>
+
+                    <h2 className="text-[17px] font-[450] mt-10 mb-4 tracking-[-0.2px]">
+                        The end of the permission economy
+                    </h2>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        For most of the last century, work has rewarded a specific
+                        archetype: the person who executes well within a system someone
+                        else built. You wait for the assignment, you complete the
+                        assignment, you wait for the next one. Skills mattered, but they
+                        mattered inside a structure of supervision, sign-off, and slow
+                        approval. The structure protected mediocre execution and punished
+                        people who moved too fast. It was a great deal if you liked
+                        meetings.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        That world is dissolving. When one person with a laptop, a Claude
+                        subscription, and a few hours can produce what used to take a team
+                        a quarter, the bottleneck stops being capability and becomes
+                        initiative. The constraint shifts from <em>can you do it</em> to{" "}
+                        <em>will you actually go do it without anyone asking</em>.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        Most people, it turns out, can't. Not won't, exactly, but actually{" "}
+                        <em>can't</em>. They've spent their entire careers being handed
+                        problems pre-defined, scoped, and approved. Take away the
+                        scaffolding and they freeze. They open the AI tool, type "what
+                        should I work on?", stare at the cursor for a while, and close the
+                        tab to go check Slack instead. Slack is comforting. Slack has
+                        notifications, which feel like assignments.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        This is what I mean by agent maxing. Not maxing out AI agents, but
+                        maxing out the agentic part of yourself. The part that picks up a
+                        problem nobody assigned you and starts working on it before anyone
+                        has decided whether you're allowed to.
+                    </p>
+
+                    <h2 className="text-[17px] font-[450] mt-10 mb-4 tracking-[-0.2px]">
+                        What natural doers actually do differently
+                    </h2>
+
+                    <blockquote className="border-l-2 border-[#e0e0e0] pl-4 my-6">
+                        <p className="text-sm mb-2 leading-[1.65] text-[#404040] italic font-[410]">
+                            "The doers are the major thinkers. The people that really
+                            create the things that change this industry are both the
+                            thinker and doer in one person."
+                        </p>
+                        <cite className="text-sm text-[#858585] not-italic font-[410]">
+                            — Steve Jobs
+                        </cite>
+                    </blockquote>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        Watch someone who thrives with these tools and you'll notice it
+                        isn't really about prompting skill. The prompts are usually
+                        mediocre. Sometimes they're embarrassing. What's different is
+                        upstream of the prompt entirely.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        Natural doers convert vague unease into concrete artifacts. They
+                        notice something annoying about their workflow on Tuesday and by
+                        Wednesday they've built a rough script that mostly fixes it. The
+                        script is ugly. The fix is partial. There's a hardcoded value in
+                        there that will absolutely cause problems later. They ship it
+                        anyway and improve it next week. The non-doer in the same situation
+                        is still drafting a Slack message asking whether anyone else has
+                        noticed the problem, then deleting it because it sounds too
+                        negative, then rewriting it with three emojis to soften the tone.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        Natural doers treat AI as a collaborator they manage rather than an
+                        oracle they consult. They give it half-formed ideas and iterate.
+                        They don't wait until they know exactly what they want before
+                        starting. They start <em>to find out</em> what they want. The
+                        output of the first attempt is the input to the second attempt, and
+                        the gap between attempt one and attempt ten is hours, not months.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        Natural doers have a high tolerance for working on things nobody
+                        validated yet. This is the deepest difference, and also the one
+                        nobody wants to admit. Most professional training conditions you to
+                        seek validation before effort: get the brief approved, get the
+                        budget signed off, get the stakeholder aligned, schedule a kickoff
+                        meeting to discuss the kickoff meeting. AI tools collapse the cost
+                        of trying things to nearly zero, but only for people whose nervous
+                        systems can handle building something that nobody asked for. If you
+                        need permission to start, the cost reduction doesn't help you.
+                        You're still gated upstream of the tools, sitting in a room waiting
+                        for someone to say go.
+                    </p>
+
+                    <h2 className="text-[17px] font-[450] mt-10 mb-4 tracking-[-0.2px]">
+                        The compounding gap
+                    </h2>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        Here's what makes this moment unusual. In previous technology
+                        shifts, the gap between the early movers and everyone else closed
+                        eventually. Email was once exotic; now your grandmother sends them,
+                        often in 48-point font with mysterious subject lines like "Fwd:
+                        Fwd: Fwd: read this". The Excel power user of 1995 has long since
+                        been outpaced by ordinary office workers who picked it up in their
+                        own time.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        AI agents are different because the gap compounds. Every project a
+                        doer completes teaches them something about how to direct these
+                        tools, which makes the next project faster, which produces more
+                        learning, which makes the project after that faster still. The
+                        non-doer's experience curve is flat. They're not building projects,
+                        so they're not building intuition. They're building opinions about
+                        AI, which is a different and much less useful skill. A year from
+                        now, the doer has shipped forty things and developed taste,
+                        judgment, and a workflow. The non-doer has read forty articles
+                        about AI and feels roughly the same as they did a year ago, except
+                        slightly more anxious.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        This doesn't mean doers will become billionaires and non-doers will
+                        become destitute. The economy is more complicated than that, and
+                        also more forgiving. But within any given field, the spread between
+                        the top operators and the median is going to widen dramatically,
+                        and the deciding variable will be something almost orthogonal to
+                        traditional credentials. Your MBA will not save you. Your years of
+                        experience will not save you. The thing that will save you is
+                        whether you can sit down on a Saturday and build something nobody
+                        asked for.
+                    </p>
+
+                    <h2 className="text-[17px] font-[450] mt-10 mb-4 tracking-[-0.2px]">
+                        Becoming one
+                    </h2>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        The uncomfortable part of all this is that "natural doer" sounds
+                        innate, and to some extent the disposition is. But the behavior is
+                        mostly trainable, and the training is unglamorous: you start things
+                        without finishing the planning. You ship work that embarrasses you
+                        slightly. You get used to the feeling of operating without a clear
+                        assignment, which initially feels like being lost in a parking lot.
+                        You build a habit of asking <em>what would I do right now if no one
+                            was going to evaluate this</em> and then doing that thing, even
+                        though some part of your brain will insist this is reckless and
+                        unprofessional and possibly illegal.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        It isn't. It's just unfamiliar.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        You won't survive the AI era because you learned the right tools.
+                        The tools are easy and getting easier. A toddler will be
+                        vibe-coding a CRM by 2027. You'll survive it, and possibly do the
+                        best work of your life, because somewhere along the way you stopped
+                        waiting for permission to begin.
+                    </p>
+
+                    <p className="text-sm mb-6 leading-[1.65] font-[410]">
+                        The agents are ready. The question is whether you are.
+                    </p>
+                </article>
+            </main>
+        </>
     )
 }
