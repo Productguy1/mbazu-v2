@@ -17,7 +17,7 @@ function Digit({ char }: DigitProps) {
                     initial={{ y: "100%" }}
                     animate={{ y: 0 }}
                     exit={{ y: "-100%" }}
-                    transition={{ type: "spring", stiffness: 200, damping: 30 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 40 }}
                     className="inline-block"
                 >
                     {char}
