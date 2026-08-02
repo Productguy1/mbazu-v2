@@ -7,20 +7,42 @@ import type { ReactNode } from "react"
 import VisitorLocation from "./VisitorsLocation"
 import { Link } from "react-router"
 import type { Location } from "./types"
-
+import { motion } from "motion/react"
+import type { Variants } from "motion/react"
 
 type TextLinkProps = {
     href: string
     children: ReactNode
 }
 
-
-
 type HomeProps = {
     location: Location | null
     error: boolean
 }
 
+// Parent: orchestrates the stagger. Each child begins 0.08s after the previous.
+const container: Variants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.08,
+        },
+    },
+}
+
+// Child: the reveal itself — the Fey recipe (blur + rise + fade), easeOutExpo.
+const item: Variants = {
+    hidden: { opacity: 0, y: 8, filter: "blur(8px)" },
+    visible: {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        transition: {
+            duration: 0.6,
+            ease: [0.16, 1, 0.3, 1],
+        },
+    },
+}
 
 function TextLink({ href, children }: TextLinkProps) {
     return (
@@ -64,8 +86,13 @@ export default function Home({ location, error }: HomeProps) {
     })
 
     return (
-        <main className="flex flex-col max-w-2xl items-start justify-center m-auto pt-24 pb-14 px-6">
-            <header className="mb-9">
+        <motion.main
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col max-w-2xl items-start justify-center m-auto pt-24 pb-14 px-6"
+        >
+            <motion.header variants={item} className="mb-9">
                 <div>
                     <h1
                         className="text-[15px] font-[450] mb-1"
@@ -76,42 +103,41 @@ export default function Home({ location, error }: HomeProps) {
                         <Clock /> in London, UK
                     </p>
                 </div>
-            </header>
+            </motion.header>
             <section>
-                <p className="text-sm mb-6 leading-[1.55]">
+                <motion.p variants={item} className="text-sm mb-6 leading-[1.55]">
                     I'm a designer at heart, but I've always been drawn to the building side of things too.
-                </p>
+                </motion.p>
 
-                <p className="text-sm mb-6 leading-[1.55]">
+                <motion.p variants={item} className="text-sm mb-6 leading-[1.55]">
                     Right now I run <TextLink href="https://www.shapeslab.design/">Shapes Lab</TextLink>, an independent studio where I help founders figure out their brand and shape their products. On evenings I'm usually hacking on something small with friends, sometimes it ships, sometimes it doesn't.
-                </p>
+                </motion.p>
 
-                <p className="text-sm mb-6 leading-[1.55]">
+                <motion.p variants={item} className="text-sm mb-6 leading-[1.55]">
                     Before that, I was the founding designer at <TextLink href="https://join.tapro.com/">Tapro</TextLink>, mostly focused on product with some brand work mixed in. And before Tapro, I was the first designer at <TextLink href="https://invertase.io/">Invertase</TextLink>, building tooling for developers.
-                </p>
+                </motion.p>
 
-                <p className="text-sm mb-6 leading-[1.55]">
+                <motion.p variants={item} className="text-sm mb-6 leading-[1.55]">
                     I care about craft, though not in a precious way. I just notice when something feels slightly off, and I genuinely can't move on until it doesn't.
-                </p>
+                </motion.p>
 
-                <p className="text-sm mb-6 leading-[1.55]">
+                <motion.p variants={item} className="text-sm mb-6 leading-[1.55]">
                     When I'm not working, I'm probably watching <FootballLink /> and picking apart the tactics, or planning the next trip somewhere I haven't been yet.
-                </p>
+                </motion.p>
 
-                <p className="text-sm mb-6 leading-[1.55]">
+                <motion.p variants={item} className="text-sm mb-6 leading-[1.55]">
                     You can find me on <XLink /> or feel free to drop me a line at <CopyEmail />.
-                </p>
+                </motion.p>
             </section>
-            <section className="w-full py-4">
+            <motion.section variants={item} className="w-full py-4">
                 <h3 className="text-[15px] font-[420] mb-4 text-[#858585]">Writing</h3>
                 <ul className="border-b-[0.5px] w-full border-[#e0e0e0]">
                     {postEls}
                 </ul>
-            </section>
-            <p className="text-sm mb-6 leading-[1.55] mt-5 text-[#707070]">
+            </motion.section>
+            <motion.p variants={item} className="text-sm mb-6 leading-[1.55] mt-5 text-[#707070]">
                 Current visitor from <VisitorLocation location={location} error={error} />
-            </p>
-        </main>
+            </motion.p>
+        </motion.main>
     )
 }
-
